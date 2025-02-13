@@ -14,8 +14,10 @@ import com.spring.one.eo.EmployeeEO;
 import com.spring.one.DAO.DAO;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
 @Slf4j
-@Repository
+@Service
 @RequiredArgsConstructor
 public class BOImpl implements BO {
 
@@ -36,6 +38,7 @@ public class BOImpl implements BO {
 		log.info("View By Id method called in BO");
 		EmployeeEO employeeEO = DAO.findById(id).orElseThrow(()-> new RuntimeException("Employee not found"));
 		EmployeeVO employeeVO = entityMapper.toEmployeeVO(employeeEO);
+		log.info("changed to vo");
 		// TODO Auto-generated method stub
 		return employeeVO;
 	}
