@@ -39,13 +39,8 @@ public class EmployeeController {
 		public EmployeeService employeeService;
 
 
-	@Operation(summary = "Simple hello endpoint", description = "Returns a greeting")
-	@ApiResponses(value = {
-			@ApiResponse(responseCode = "200", description = "Successful operation")
-	})
 	    @PostMapping("/create")
 	    public ResponseEntity<String> createEmployee(@Valid @RequestBody EmployeeVO employeeVO) {
-//			System.out.println("employeeVO: "+employeeVO);
 			log.info("Create Employee method called in Controller");
 			employeeService.createEmployee(employeeVO);
 	        return ResponseEntity.status(HttpStatus.CREATED).body("Employee Created Successfully");
