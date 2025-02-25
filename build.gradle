@@ -15,6 +15,9 @@ java {
 }
 
 configurations {
+	cucumberRuntime {
+		extendsFrom testImplementation
+	}
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
@@ -41,6 +44,12 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	testImplementation 'org.mockito:mockito-core'
 	testImplementation 'org.mockito:mockito-junit-jupiter'
+	testImplementation 'io.cucumber:cucumber-spring:7.14.0'
+	testImplementation 'io.cucumber:cucumber-java:7.14.0'
+	testImplementation 'io.cucumber:cucumber-junit:7.14.0'
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+	testImplementation 'io.rest-assured:rest-assured:5.3.2'
+	testImplementation 'org.junit.vintage:junit-vintage-engine:5.7.2'
 
 }
 
